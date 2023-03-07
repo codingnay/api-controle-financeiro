@@ -32,16 +32,15 @@ CREATE TABLE spending (
 
 INSERT INTO user (name, email, password, income, gender, telephone)
 VALUES
-('Thiago Bomfim', 'thiago@bomfim.com', '123', 5000, 'Rua Alguma Coisa', 'masc', '21984635412'),
-('Ana Beatriz', 'ana@beatriz.com', '456',  4000, 'Rua Alguma Coisa','fem', '21976312348'),
-('Larissa Meirelles', 'larissa@meirelles.com', '789', 6000,'Rua Alguma Coisa', 'fem', '21994628632'),
-('Alan Nataniel', 'alan@nataniel.com', '147', 5500, 'Rua Alguma Coisa','masc', '21989453214'),
-('Mariana Medeiros', 'mariana@medeiros.com', '258', 5000,'Rua Alguma Coisa', 'fem', '21965784512'),
-('Nayane Cristina', 'nayane@cristina.com', '369', 5800, 'Rua Alguma Coisa','fem', '21963129725');
+('Camila Ferreira', 'camila@alves.com', '123', 5000, 'Rua Vinte e Três', 'fem', '21985216395'),
+('Bruna Correa', 'bruna@correa.com', '456',  4000, 'Rua Cinquenta e Oito','fem', '21947512536'),
+('Felipe de Souza', 'felipe@souza.com', '789', 6000,'Rua Cinco e Sete', 'masc', '21986495388'),
+('Luna Alves', 'luna@alves.com', '147', 5500, 'Rua Sessenta e Quatro','fem', '21925336492');
+
 
 
 INSERT INTO spending (user_id, name, category, value, description) VALUES 
-(1, 'Academia', 'Saúde', 70, ''),
+(1, 'Academia', 'Saúde', 750, 'Paguei 6 meses de academia'),
 (1, 'Farmácia', 'Saúde', 200, 'Comprei alguns cosméticos, quase não me sobra dinheiro, tudo muito caro.'),
 (2, 'Rolê sábado', 'Lazer', 170, 'Consegui sair para o rolê nesse final de semana sem gastar muito.'),
 (2, 'Casa do Biscoito', 'Alimentação', 50,'Comprei alguns biscoitos na Casa do Biscoito.'),
