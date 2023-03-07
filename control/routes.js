@@ -17,6 +17,7 @@ router.get("/", (req, res) => {
 
 router.get("/spending/", spendingControl.getAll);
 router.get("/spending/:id", spendingControl.getOne);
+router.get("/spending/user/:id", spendingControl.getAllUser);
 router.post("/spending/", bodyParser, spendingControl.post);
 router.put("/spending/:id", bodyParser, spendingControl.put);
 router.delete("/spending/:id", spendingControl.delete);

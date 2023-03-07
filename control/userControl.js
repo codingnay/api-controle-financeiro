@@ -27,9 +27,9 @@ const userControl = {
   // Insere um novo registro.
   post: async (req, res) => {
     try {
-      const { name, email, password, income, gender, telephone } = req.body;
-      const sql = "INSERT INTO user (name, email, password, income, gender, telephone) VALUES (?, ?, ?, ?, ?, ?)";
-      const [rows] = await conn.query(sql, [name, email, password, income, gender, telephone]);
+      const { name, email, password, income, address, gender, telephone } = req.body;
+      const sql = "INSERT INTO user (name, email, password, income, address, gender, telephone) VALUES (?, ?, ?, ?, ?, ?)";
+      const [rows] = await conn.query(sql, [name, email, password, income, address, gender, telephone]);
       res.json({ data: rows });
     } catch (error) {
       res.json({ status: "error", message: error });
@@ -54,10 +54,10 @@ const userControl = {
   // Edita o registro pelo Id.
   put: async (req, res) => {
     try {
-      const { name, email, password, income, gender, telephone } = req.body;
+      const { name, email, password, income, address, gender, telephone } = req.body;
       const { id } = req.params;
-      const sql = "UPDATE user SET name = ?, email = ?, password = ?, income = ?, gender = ?, telephone = ? WHERE id = ?"
-      const [rows] = await conn.query(sql, [name, email, password, income, gender, telephone,  id]);
+      const sql = "UPDATE user SET name = ?, email = ?, password = ?, income = ?, address = ?, gender = ?, telephone = ? WHERE id = ?"
+      const [rows] = await conn.query(sql, [name, email, password, income, address, gender, telephone,  id]);
       res.json({ data: rows });
     } catch (error) {
       res.json({ status: "error", message: error });

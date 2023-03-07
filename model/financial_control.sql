@@ -13,6 +13,7 @@ CREATE TABLE user (
     password VARCHAR(127) NOT NULL,
     telephone VARCHAR(20),
     income DECIMAL NOT NULL,
+    address VARCHAR(255),
     gender ENUM('fem', 'masc', 'prefiro não informar') DEFAULT 'prefiro não informar',
     status ENUM('on', 'off', 'del') DEFAULT 'on'
 );
@@ -24,19 +25,19 @@ CREATE TABLE spending (
     name VARCHAR(255) NOT NULL,
     category VARCHAR(255),    
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    value DECIMAL NOT NULL,
+    value VARCHAR(255) NOT NULL,
     description TEXT,
     FOREIGN KEY (user_id) REFERENCES user (id)
 );
 
 INSERT INTO user (name, email, password, income, gender, telephone)
 VALUES
-('Thiago Bomfim', 'thiago@bomfim.com', '123', 5000, 'masc', '21984635412'),
-('Ana Beatriz', 'ana@beatriz.com', '456',  4000, 'fem', '21976312348'),
-('Larissa Meirelles', 'larissa@meirelles.com', '789', 6000, 'fem', '21994628632'),
-('Alan Nataniel', 'alan@nataniel.com', '147', 5500, 'masc', '21989453214'),
-('Mariana Medeiros', 'mariana@medeiros.com', '258', 5000, 'fem', '21965784512'),
-('Nayane Cristina', 'nayane@cristina.com', '369', 5800, 'fem', '21963129725');
+('Thiago Bomfim', 'thiago@bomfim.com', '123', 5000, 'Rua Alguma Coisa', 'masc', '21984635412'),
+('Ana Beatriz', 'ana@beatriz.com', '456',  4000, 'Rua Alguma Coisa','fem', '21976312348'),
+('Larissa Meirelles', 'larissa@meirelles.com', '789', 6000,'Rua Alguma Coisa', 'fem', '21994628632'),
+('Alan Nataniel', 'alan@nataniel.com', '147', 5500, 'Rua Alguma Coisa','masc', '21989453214'),
+('Mariana Medeiros', 'mariana@medeiros.com', '258', 5000,'Rua Alguma Coisa', 'fem', '21965784512'),
+('Nayane Cristina', 'nayane@cristina.com', '369', 5800, 'Rua Alguma Coisa','fem', '21963129725');
 
 
 INSERT INTO spending (user_id, name, category, value, description) VALUES 

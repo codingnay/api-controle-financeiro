@@ -3,6 +3,10 @@ const express = require('express');
 // Cria um aplicativo "Express".
 const app = express();
 
+const cors = require("cors");
+
+app.use(cors());
+
 // Faz configuração do aplicativo.
 const conf = require('dotenv').config().parsed;
 
